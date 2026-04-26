@@ -68,4 +68,8 @@ public Mahasiswa25 peekBottom() {
         return null;
     }
 }
+
+public int getJumlah() {
+    return top + 1;
+}
 }
