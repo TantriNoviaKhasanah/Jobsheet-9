@@ -8,11 +8,10 @@ public class MahasiswaDemo25 {
 
         do {
             System.out.println("\nMenu:");
-            System.out.println("1. Tambah Tugas");
-            System.out.println("2. Nilai Tugas");
-            System.out.println("3. Lihat Tugas Teratas");
-            System.out.println("4. Lihat Semua Tugas");
-            System.out.println("5. Keluar");
+            System.out.println("1. Mengumpulkan Tugas");
+            System.out.println("2. Menilai Tugas");
+            System.out.println("3. Melihat Tugas Teratas");
+            System.out.println("4. Melihat Daftar Tugas");
             System.out.print("Pilih: ");
             pilih = scan.nextInt();
             scan.nextLine();
@@ -25,9 +24,10 @@ public class MahasiswaDemo25 {
                     String nim = scan.nextLine();
                     System.out.print("Kelas: ");
                     String kelas = scan.nextLine();
-                    Mahasiswa25 mhs = new Mahasiswa25(nim, nama, kelas);
+
+                    Mahasiswa25 mhs = new Mahasiswa25(nama, nim, kelas);
                     stack.push(mhs);
-                    System.out.printf("Tugas %s berhasil dikumpulkan\n, mhs.nama");
+                    System.out.printf("Tugas %s berhasil dikumpulkan\n", mhs.nama);
                     break;
 
                 case 2:
@@ -37,7 +37,7 @@ public class MahasiswaDemo25 {
                         System.out.print("Masukkan nilai (0-100): ");
                         int nilai = scan.nextInt();
                         dinilai.tugasDinilai(nilai);
-                        System.out.printf("Nilai Tugas % adalah %d\\n\", dinilai.nama, nilai");
+                        System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
                     }
                     break;
 
@@ -53,9 +53,11 @@ public class MahasiswaDemo25 {
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
                     break;
+
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
-        } while (pilih >= 1 && pilih <= 4);
+
+        } while (pilih != 5);
     }
 }
